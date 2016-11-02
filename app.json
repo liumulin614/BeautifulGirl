@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/album/album",
+    "pages/types/types"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#BE304D",
+    "navigationBarTitleText": "美女模特",
+    "navigationBarTextStyle":"white"
+  },
+  "debug":false
+}

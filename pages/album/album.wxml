@@ -1,0 +1,16 @@
+<view class="container">
+<swiper class="image-list-wrap" bindchange="swiperChange">
+    <block wx:for="{{album}}">
+        <swiper-item>
+        <image bindlongtap="imageLongTap" mode="aspectFit" src="{{item}}" data-src="{{item}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+    </swiper>
+    <!--图片数目-->
+    <block wx:if="{{countShow}}">
+        <view class="albumCount" bindtap="hideCount">
+         {{currentIndex}}/{{album.length}}
+        </view>
+    </block>
+</view>
+
