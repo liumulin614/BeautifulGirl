@@ -1,5 +1,6 @@
 var app = getApp()
 var dialog = require("../../utils/dialog")
+var wxNotificationCenter = require("../../utils/WxNotificationCenter")
 
 Page({
     data:{
@@ -41,8 +42,8 @@ Page({
                 }
             })
         }
-        app.globalData.needFreshTypes = true
         this.setData({types:types})
         wx.setStorageSync("types", types)
+        wxNotificationCenter.postNotificationName("typesChangeNotification")
     }
 })

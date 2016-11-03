@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp()
 var dialog = require("../../utils/dialog")
+var wxNotificationCenter = require("../../utils/WxNotificationCenter")
 
 Page({
   //加载第一个类型的列表
@@ -10,26 +11,25 @@ Page({
       let that = this
       this.data.types.every(function(item){
         if(item.is_show){
-                     wx.setStorageSync('currentType', item.value)
-                     that.setData({currentType:item.value})
-                     return false
+            wx.setStorageSync('currentType', item.value)
+            that.setData({currentType:item.value})
+            return false
           }else{
             return true
           }
       })
     }
     this.getList(this.data.currentType)
+    //添加通知监听
+    wxNotificationCenter.addNotification("typesChangeNotification",this.typesChangeNotificationHandler,this)
   },
-  onShow:function(){
-    //每次出现的时候都判断一下是否需要刷新内容
-    if(app.globalData.needFreshTypes){
-      app.globalData.needFreshTypes = false
-      this.setData({
+  //接收类别编辑页面中修改了类别标签的通知，重新处理
+  typesChangeNotificationHandler:function(){
+    this.setData({
         types:wx.getStorageSync('types'),
         currentType:wx.getStorageSync('currentType')
       })
       this.getList(wx.getStorageSync('currentType')) 
-    }
   },
   getList:function(type){
     dialog.loading()
