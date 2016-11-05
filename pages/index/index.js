@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
 var app = getApp()
-var dialog = require("../../utils/dialog")
-var wxNotificationCenter = require("../../utils/WxNotificationCenter")
+var dialog = require("../../utils/dialog.js")
+var wxNotificationCenter = require("../../utils/WxNotificationCenter.js")
 
 Page({
   //加载第一个类型的列表
@@ -50,7 +50,10 @@ Page({
             }
           },
           complete:function(){
-            dialog.hide()
+            wx.stopPullDownRefresh()
+            setTimeout(function(){
+              dialog.hide()
+            },1000)
           }
         })
   },

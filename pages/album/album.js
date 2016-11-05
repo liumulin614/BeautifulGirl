@@ -30,7 +30,9 @@ Page({
             }
           },
           complete:function(){
-            dialog.hide()
+            setTimeout(function(){
+              dialog.hide()
+            },1000)
           }
         })
     },
@@ -47,6 +49,34 @@ Page({
       this.setData({currentIndex:parseInt(e.detail.current)+1});
     },
     imageLongTap:function(e){
+      wx.showActionSheet({
+        itemList:['保存图片'],
+        success:function(res){
+          if(res.tapIndex == 0){
+            var imageSrc = e.currentTarget.dataset.src
+            console.log(imageSrc)
+            wx.downloadFile({
+              url: imageSrc, 
+                    success: function(res) {
+                      console.log(res)
+                        wx.saveFile({
+                          tempFilePath: res.tempFilePath,
+                          success: function(res){
+                            console.log(res.savedFilePath)
+                            dialog.toast("保存成功")
+                          },
+                          fail: function(e) {
+                            dialog.toast("保存出错")
+                          }
+                        })
+                    },
+                    fail:function(e){
+                      dialog.toast("图片下载失败")
+                    }
+            })
+          }
+        }
+      })
     },
     hideCount:function(){
       this.setData({countShow:false})

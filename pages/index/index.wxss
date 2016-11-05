@@ -4,7 +4,7 @@
     top: 0px;
     left:0px;
     width: 100%;
-    border-bottom: 2rpx solid #F7F7F7;
+    border-bottom: 2rpx solid #ccc;
     display: flex;
     background-color: #ffffff;
     z-index: 1000;
