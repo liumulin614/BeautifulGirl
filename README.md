@@ -8,6 +8,6 @@
 ## 首页-相册列表页面
 ![](https://raw.githubusercontent.com/liumulin614/fe-demo/master/bed/preview/%E9%A6%96%E9%A1%B5.png) 
 ## 图片列表展示页
-![](https://github.com/liumulin614/fe-demo/blob/master/bed/preview/2.png?raw=true) 
+![](https://raw.githubusercontent.com/liumulin614/fe-demo/master/bed/preview/2.png) 
 ## 相册类别编辑页
 ![](https://raw.githubusercontent.com/liumulin614/fe-demo/master/bed/preview/3.png) 
