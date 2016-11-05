@@ -6,8 +6,8 @@
   Wechat APP Sample: An app shows pictures of beautiful girls
 # 预览
 ## 首页-相册列表页面
-![](https://raw.githubusercontent.com/liumulin614/BeautifulGirl/master/image/preview/%E9%A6%96%E9%A1%B5.png) 
+![](https://raw.githubusercontent.com/liumulin614/fe-demo/master/bed/preview/%E9%A6%96%E9%A1%B5.png) 
 ## 图片列表展示页
-![](https://raw.githubusercontent.com/liumulin614/BeautifulGirl/master/image/preview/2.png) 
+![](https://github.com/liumulin614/fe-demo/blob/master/bed/preview/2.png?raw=true) 
 ## 相册类别编辑页
-![](https://raw.githubusercontent.com/liumulin614/BeautifulGirl/master/image/preview/3.png) 
+![](https://raw.githubusercontent.com/liumulin614/fe-demo/master/bed/preview/3.png) 
