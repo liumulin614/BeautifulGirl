@@ -22,8 +22,20 @@ Page({
           success:function(ret){
             ret = ret['data']
             if(ret['showapi_res_code'] == 0 && ret['showapi_res_body']){
+              var imgList = ret['showapi_res_body']['imgList'];
+              var imgObjList = [];
+              imgList.forEach(function(item,index){
+                imgObjList.push({
+                      url:item,
+                      w:750,
+                      h:375
+                })
+              })
               that.setData({
-              album:ret['showapi_res_body']['imgList']
+                album:imgObjList,
+                albumUrlList:imgList,
+                total:imgList.length,
+                loaded:0
               })
             }else{
               dialog.toast("网络出错啦~")
@@ -39,10 +51,22 @@ Page({
     onReady:function(){
         wx.setNavigationBarTitle({title:this.data.title})
     },
+    imageload:function(e){
+      var h = e.detail.height
+      var w = e.detail.width
+      var index = e.currentTarget.dataset.index
+       var album = this.data.album
+        album[index].h = parseInt(750 * h / w)
+        this.setData({
+          album:album
+        })
+      
+      
+    },
     preiviewwImage(e){
       wx.previewImage({
         current:e.currentTarget.dataset.src,
-        urls:this.data.album
+        urls:this.data.albumUrlList
       })
     },
     swiperChange:function(e){

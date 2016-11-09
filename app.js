@@ -53,13 +53,18 @@ App({
         is_show:true
       },
       {
-        title:"美女车展",
-        value:"rufang",
+        title:"模特",
+        value:"mote",
         is_show:true
       },
       {
-        title:"av演员",
-        value:"av",
+        title:"剧照",
+        value:"yingshi",
+        is_show:true
+      },
+      {
+        title:"自拍",
+        value:"tpzp",
         is_show:true
       },
       {

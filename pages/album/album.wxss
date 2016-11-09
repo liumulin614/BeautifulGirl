@@ -1,13 +1,5 @@
-.container{
-    height: 100%;
-}
 .image-list-wrap{
     width: 100%;
-    height: 100%;
-}
-.image-list-wrap image{
-    width: 100%;
-    height: 100%;
 }
 .albumCount{
     width: 120rpx;
