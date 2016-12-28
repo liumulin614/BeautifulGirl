@@ -78,7 +78,7 @@ Page({
   gotoAlbum:function(e){
     let param = e.currentTarget.dataset, title = param.title, id=param.id
     var url = "../album/album?title="+title+"&id="+id.replace(".","##");
-    wx.redirectTo({url:url})
+    wx.navigateTo({url:url})
   },
   data: {
     contentList:[],
