@@ -72,12 +72,13 @@ Page({
   },
   gotoTypeEdit:function(e){
     wx.navigateTo({
-      url: '../types/types',
+      url: '../types/types?id=1',
     })
   },
   gotoAlbum:function(e){
     let param = e.currentTarget.dataset, title = param.title, id=param.id
-    wx.navigateTo({url:"../album/album?title="+title+"&id="+id})
+    var url = "../album/album?title="+title+"&id="+id.replace(".","##");
+    wx.redirectTo({url:url})
   },
   data: {
     contentList:[],

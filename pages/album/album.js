@@ -12,13 +12,13 @@ Page({
     onLoad:function(options){
         this.setData({
             title:options.title,
-            id:options.id,
+            id:options.id.replace("##","."),
         })
         dialog.loading()
         //请求数据
         var that = this
         wx.request({
-          url:app.globalData.api.albumBaseurl.replace("%id%",options.id),
+          url:app.globalData.api.albumBaseurl.replace("%id%",this.data.id),
           success:function(ret){
             ret = ret['data']
             if(ret['showapi_res_code'] == 0 && ret['showapi_res_body']){
